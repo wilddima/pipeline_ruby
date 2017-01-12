@@ -6,6 +6,6 @@ module Pipeline
 
   def pipeline(arg, &block)
     raise unless block_given?
-    Operator.new(arg: arg, block: block, context: self).call!
+    Operator.new(arg: arg, block: block, context: self).arg
   end
 end

@@ -6,10 +6,7 @@ module Pipeline
       @arg = arg
       @block = block
       @context = context
-    end
-
-    def call!
-      self.instance_eval(&block).arg
+      self.instance_eval(&block)
     end
 
     def method_missing(m, *args, &block)
