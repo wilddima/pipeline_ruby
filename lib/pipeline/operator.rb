@@ -1,4 +1,4 @@
-module Pipelinify
+module Pipeline
   class Operator
     attr_reader :block, :arg, :context
 
@@ -13,7 +13,7 @@ module Pipelinify
     end
 
     def method_missing(m, *args, &block)
-      pipeline = Pipelinify::Pipeline.new(arg: context.send(m, arg), func: m, context: context)
+      pipeline = Pipeline::Caller.new(arg: context.send(m, arg), func: m, context: context)
       @arg = pipeline.arg
       pipeline
     end

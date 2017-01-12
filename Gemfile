@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in pipelinify.gemspec
+# Specify your gem's dependencies in pipeline_ruby.gemspec
 gemspec

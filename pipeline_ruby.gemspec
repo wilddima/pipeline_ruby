@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pipelinify/version'
+require 'pipeline/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "pipelinify"
-  spec.version       = Pipelinify::VERSION
+  spec.name          = "pipeline_ruby"
+  spec.version       = Pipeline::VERSION
   spec.authors       = ["WildDima"]
   spec.email         = ["dtopornin@gmail.com"]
 

@@ -1,13 +1,13 @@
 require "spec_helper"
 
-describe Pipelinify do
+describe Pipeline do
   it "has a version number" do
-    expect(Pipelinify::VERSION).not_to be nil
+    expect(Pipeline::VERSION).not_to be nil
   end
 
   context 'in class' do
     class Test
-      include Pipelinify
+      include Pipeline
 
       def upcase(arg)
         arg.upcase

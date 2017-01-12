@@ -1,5 +1,5 @@
-module Pipelinify
-  class Pipeline
+module Pipeline
+  class Caller
     attr_reader :arg, :func, :context
 
     def initialize(arg:, func:, context:)
@@ -9,7 +9,7 @@ module Pipelinify
     end
 
     def >>(func)
-      Pipelinify::Pipeline.new arg: context.send(func.to_sym, arg), func: func, context: context
+      Pipeline::Caller.new arg: context.send(func.to_sym, arg), func: func, context: context
     end
 
     def to_sym
