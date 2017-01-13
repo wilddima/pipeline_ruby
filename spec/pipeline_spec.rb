@@ -29,10 +29,56 @@ describe Pipeline do
         arg.join
       end
 
-      def call(arg)
+      def pipeline_call(arg)
         pipeline(arg) do
-          upcase >> split >> add >> reverse >> join
+          upcase >>
+          split >>
+          add >>
+          reverse >>
+          join >>
+          upcase >>
+          split >>
+          add >>
+          reverse >>
+          join >>
+          upcase >>
+          split >> 
+          add >>
+          reverse >>
+          join
         end
+      end
+
+      def normal_call(arg)
+        join(
+          reverse(
+            add(
+              split(
+                upcase(
+                  join(
+                    reverse(
+                      add(
+                        split(
+                          upcase(
+                            join(
+                              reverse(
+                                add(
+                                  split(
+                                    upcase(arg)
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
       end
     end
 
@@ -40,12 +86,12 @@ describe Pipeline do
 
     let(:normal_calculation) do
       test = test_klass.new
-      test.join(test.reverse(test.add(test.split(test.upcase('qwe')))))
+      test.normal_call('qwe')
     end
 
     subject do
       test = test_klass.new
-      test.call('qwe')
+      test.pipeline_call('qwe')
     end
 
     it { should eq(normal_calculation) }
