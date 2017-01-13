@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - pipeline_ruby.gemspec
+    - Rakefile
+    - bin/test.rb
+    - spec/**/*
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 13
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 120
