@@ -1,6 +1,9 @@
 == pipeline_ruby
 
-Pipeline operator for ruby
+{<img src="https://travis-ci.org/WildDima/pipeline_ruby.svg?branch=master"
+alt="Build Status" />}[https://travis-ci.org/WildDima/pipeline_ruby]
+
+Simple pipeline operator for ruby
 
 === Installation
 
